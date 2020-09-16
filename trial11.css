@@ -1,0 +1,151 @@
+/*Body of Main Library-Page starts here*/
+body{
+	margin:0px;
+
+}
+h1{
+	text-align: center;
+}
+/*body of the main page ends here*/
+
+/*header region for main html page starts here*/
+#header{
+	display:inline-block;
+	width:100%;
+	box-sizing: border-box;
+	border:solid;
+	background:#0D94AC;
+	height:15vh;
+}
+h2{
+	text-shadow: 2px 2px 5px white;
+}
+img{
+	float:left;
+	width:6%;
+}
+/*header region for main html page ends here*/
+
+
+/*header region for User,Book and Loan page starts here*/
+#header1{
+	display:inline-block;
+	width:100%;
+	box-sizing: border-box;
+	border:solid;
+	background:#0D94AC;
+	height:20vh;
+}
+h3{
+	text-align: center;
+}
+/*header region for User,Book and Loan page  ends here*/
+
+
+
+/*footer region for main library-page starts here*/
+#footer{
+	display:inline-block;
+	width:99%;
+	box-sizing: border-box;
+	border:solid;
+	background:#0D94AC;
+	height:30vh;
+	margin:20px;
+
+}
+#footer img{
+
+	float:right;
+	width:8%;
+	margin:10px;
+
+}
+/*footer region for main library-page  ends here*/
+
+/*footer region for User page starts here*/
+#footer1{
+	display:inline-block;
+	width:100%;
+	box-sizing: border-box;
+	border:solid;
+	background:#0D94AC;
+	height:12vh;
+
+	
+}
+h6{
+	float:right;
+}
+/*footer for User page ends here*/
+
+/*middle of the main library-page(for user,book and loan images and links) starts here*/
+#test100{
+	width:100%;
+}
+
+.test1 img{
+	display:inline-block;
+	width:40%;
+	height:35vh;
+	margin:20px;
+	
+
+}
+.section2{
+
+	display:inline-block;
+	box-sizing: border-box;
+	border:solid;
+	width:50%;
+	height:45px;
+	text-align: center;
+	margin:20px;
+	
+
+}
+#test200{
+	width:100%;
+}
+
+.test111 img{
+	display:inline-block;
+	width:40%;
+	height:35vh;
+	margin:20px;
+	
+
+}
+.section222{
+
+	display:inline-block;
+	box-sizing: border-box;
+	border:solid;
+	width:50%;
+	height:15px;
+	text-align: center;
+	
+}
+
+
+/*middle of the main library-page(for user,book and loan images and links) ends here*/
+
+
+
+/*CSS for university of pontybridge in footer region of main page starts here*/
+h5{
+	float:right;
+	margin:0px;
+	
+	text-shadow: 2px 2px 5px white;
+}
+/*CSS for university of pontybridge in footer region of main page endss here*/
+
+
+/*CSS for contact us in footer region of main page starts here*/
+h4{
+	float:left;
+	text-shadow: 2px 2px 5px red;
+}
+/*CSS for contact us in footer region of main page ends here*/
+

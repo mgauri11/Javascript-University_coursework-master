@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--I am using bootstrap for user page forms from link:-https://www.w3schools.com/bootstrap/bootstrap_forms.asp-->
+<!--I have taken this code for searching from link:-https://www.w3schools.com/howto/howto_css_searchbar.asp-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="search.css">
+    <title>Search API</title>
+</head>
+<body>
+
+    
+    <ul id="c2">
+        
+    </ul>
+   
+<!--I have taken this code for searching from link:-https://www.w3schools.com/howto/howto_css_searchbar.asp-->
+    <div class="topnav">
+        <a class="active" href="#home">Users</a>
+        <a class="Books" href="#home">Books</a>
+        <a class="Loans" href="#home">Loans</a>
+        <a class="Authors" href="#home">Authors</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.."  id="search_term">
+                <input type="button" value="Search" id="search_button">
+                <div id="output"></div>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <script>
+         
+
+        const encodeParameters = function(params) {
+            var strArray = [];
+            Object.keys(params).forEach(function(key) {
+                var paramString = encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
+                strArray.push(paramString);
+            });
+            return strArray.join("&");
+        };
+
+        const makeAPIQuery = function(search_term) {
+            let rootURL = "http://127.0.0.1:3000/search";
+
+            let params = {
+                type: 'user',
+                barcode: search_term,
+                
+            };
+
+            let queryURL = rootURL + "?" + encodeParameters(params);
+            console.log(queryURL);
+
+            let xhttp = new XMLHttpRequest();
+            xhttp.addEventListener("load", processResponse);
+            xhttp.open("GET", queryURL);
+            xhttp.send();
+        };
+
+        let submitButton = document.getElementById("search_button");
+        submitButton.addEventListener("click", function() {
+            let search_term = document.getElementById("search_term").value;
+
+            if (search_term) {
+                makeAPIQuery(search_term);
+            }
+        });
+
+        const createList = function(parentElement) {
+            let newList = document.createElement("ul");
+            parentElement.appendChild(newList);
+            return newList;
+        };
+
+        const addListItem = function(parentList, textContent) {
+            let newItem = document.createElement("li");
+            newItem.appendChild(document.createTextNode(textContent));
+            parentList.appendChild(newItem);
+        };
+
+        const processResponse = function() {
+            let response = JSON.parse(this.response);
+            console.log(response);
+            let outputDiv = document.getElementById("output");
+            let newList = createList(outputDiv);
+            response.forEach(function(user) {
+                addListItem(newList, user.name);
+                addListItem(newList, user.barcode);
+                addListItem(newList, user.memberType);
+                addListItem(newList, user.id);
+                
+            });
+        };
+    </script> 
+
+</body>
+
+</html>

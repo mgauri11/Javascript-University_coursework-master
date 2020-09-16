@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--I am using bootstrap for user page forms from link:-https://www.w3schools.com/bootstrap/bootstrap_forms.asp-->
+<head>
+  <title>User-Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="trial11.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="header1">
+        <h3>User Information</h3>   
+    </div>
+
+    <ul id="users_list">
+
+    </ul>
+    <script src="GETusersapi.js"></script>
+
+
+<!--I have taken this code for forms from link:-https://www.w3schools.com/bootstrap/bootstrap_forms.asp-->
+    <div class="container">
+        <h3>User-Form</h3>
+        <form action="/action_page.php" id="output">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control" id="create_user_name" placeholder="Enter Name" name="name">
+        </div>
+        <div class="form-group">
+            <label>Barcode:</label>
+            <input type="number" class="form-control" id="create_user_number" placeholder="Enter barcode" name="barcode">
+        </div>
+        
+        <div class="form-group">
+            <label>Select list (select one):</label>
+            <select class="form-control" id="create_user_member_type">
+                <option>Staff</option>
+                <option>Student</option>
+       
+            </select>
+        </div>
+        <div>
+            <input type="button"  value="Add User" id="create_user_button">
+        </div>
+     
+        
+        </form>
+        <script src="POSTuserapi.js"></script>
+    </div>
+    <div>
+        <!--I have taken this code for button with link from link:-
+            https://getbootstrap.com/docs/4.0/components/buttons/-->
+        <h1><a class="btn btn-primary" href="trialsearchapi.html" role="button">Search For Users</a></h1>
+    </div>
+
+   
+
+
+</body>
+</html>
+

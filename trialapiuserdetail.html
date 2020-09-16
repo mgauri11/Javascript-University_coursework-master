@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--I am using bootstrap for user page forms from link:-https://www.w3schools.com/bootstrap/bootstrap_forms.asp-->
+<head>
+  <title>User-Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="trial11.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="header1">
+        <h3>User Information</h3>   
+    </div>
+
+    <ul id="users_list">
+
+    </ul>
+    <script src="user.js"></script>
+    
+    
+<!--I have taken this code for forms from link:-https://www.w3schools.com/bootstrap/bootstrap_forms.asp-->
+    <div class="container">
+        <h3>User-Form</h3>
+        <div id="output"></div>
+
+        <form action="/action_page.php">
+            <input type="hidden" id="user_id">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" class="form-control" id="update_user_name" placeholder="Enter Name" name="name">
+            </div>
+            <div class="form-group">
+                    <label>Select list (select one):</label>
+                    <select class="form-control" id="update_user_member_type">
+                        <option>Staff</option>
+                        <option>Student</option>
+                    </select>
+                </div>
+            
+
+            <div>
+                <input type="button"  value="Update User" id="create_update_button">
+            </div>
+        </form>
+    </div>
+        <script src="PUTuserapi.js"></script>
+
+<!--I have taken this code for forms from link:-https://www.w3schools.com/bootstrap/bootstrap_forms.asp-->
+
+        <div class="container">
+            <div id="output3"></div>
+            <form action="/action_page.php">
+                <!--<input type="hidden" id="user_id">-->
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" id="delete_user_name" placeholder="Enter Name" name="name">
+                </div>
+                <div class="form-group">
+                    <label>Barcode:</label>
+                    <input type="number" class="form-control" id="delete_user_barcode" placeholder="Enter Barcode" name="barcode">
+                </div>
+                <div class="form-group">
+                    <label>Select list (select one):</label>
+                    <select class="form-control" id="delete_user_member_type">
+                        <option>Staff</option>
+                        <option>Student</option>
+                    </select>
+                </div>
+
+                <div>
+                    <input type="button"  value="Delete User" id="create_delete_button">
+                </div>
+            </form>
+        </div>
+        <script src="DELETEuserapi.js"></script>
+</body>
+</html>
+
+
+
+

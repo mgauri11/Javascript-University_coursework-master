@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--I am using bootstrap for user page forms from link:-https://www.w3schools.com/bootstrap/bootstrap_forms.asp-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="trial11.css">
+   
+    <title>Books Detail</title>
+</head>
+<body>
+    <div id="header1">
+        <h3>Book-Information</h3>
+    </div>
+
+    <div id="book-info"></div>
+
+	<script>
+		const urlParams = new URLSearchParams(window.location.search);
+		var book_id = urlParams.get('book_id');
+		const makeAPIQuery = function(book_id) {
+
+		    let rootURL = "http://127.0.0.1:3000/books/" + book_id;
+		    let xhttp = new XMLHttpRequest();
+
+		    xhttp.addEventListener("load", processResponse);
+
+		    xhttp.open("GET", rootURL);
+
+		    xhttp.send();
+		};
+
+		const processResponse = function() {
+
+		    let response = JSON.parse(this.response);
+		    let bookInfo = document.getElementById("book-info");
+            bookInfo.innerHTML += response['title']
+            bookInfo.innerHTML += response['isbn']
+		    
+		};
+		
+
+		makeAPIQuery(book_id);
+		
+	</script>
+
+
+    <h1>Select author(s) and add them to the book</h1>
+    <div id="authors-list"></div>
+
+    <h1>Or you can add a new author</h1>
+    <form id="add-author-to-book-form">
+        <input type="text" name="name" placeholder="Author Name">
+        <input id="submit-btn" type="submit" name="Add">
+    </form>
+
+
+    <script src="PUTbooksapi.js"></script>
+    <script src="GETauthors_booksapi.js"></script>
+    <!--DELETE FOR BOOKS API-->
+    <div id="input3"></div>
+    <div>
+        <form>
+        <div>
+            <label>Title:
+                
+
+                <input type="text" id="delete_book_title">
+                
+            </label>
+        </div>
+        <div>
+            <label>ISBN:
+                <input type="text" id="delete_book_isbn">
+                
+            </label>
+        </div>
+        <div>
+
+            <input type="button" value="Click to delete book" id="delete_book_button">
+        </div>
+        
+    </form>
+    <script src="DELETEauthors_booksapi.js"></script>
+    
+    </div>
+   
+    <div>
+        <p>Latest Additions to the Library:-</p>
+    </div>
+    <div class="w3-card" style="width:30%">
+        <!--Image link:-https://pixabay.com/en/book-cover-book-3d-ebook-1024644/-->
+        <img src="book-cover1.jpg" alt="Book" style="width:50%" >
+        <div class="w3-container">
+            <p><b>By:Gauri Mudiraj</b></p>
+            <p>Be Creative</p>
+        </div>
+    </div>
+    
+    
+    
+    
+
+  
+
+       
+
+   
+
+
+   
+
+    
+   
+

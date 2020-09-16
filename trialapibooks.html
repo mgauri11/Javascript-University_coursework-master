@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--I am using bootstrap for user page forms from link:-https://www.w3schools.com/bootstrap/bootstrap_forms.asp-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="trial11.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>BOOKS API</title>
+</head>
+<body>
+  <div id="header1">
+    <h1>Book-Page</h1>
+  </div>
+	<script src="GETbooksapi.js"></script>
+  <form action="/action_page.php" id="input">
+
+    <div class="form-group">
+
+      <label>Title:</label>
+      <input type="text" class="form-control" id="create_book_title" placeholder="Enter Title" name="title">
+    </div>
+    <div class="form-group">
+      <label>ISBN:</label>
+      <input type="number" class="form-control" id="create_book_isbn" placeholder="Enter isbn" name="isbn">
+    </div>
+        
+        
+    <div>
+      <input type="button"  value="Add Book" id="create_book_button">
+    </div>
+     
+        
+  </form>
+  <script src="POSTbooksapi.js"></script>
+
+  <div>
+
+        <!--I have taken this code for button with link from link:-
+            https://getbootstrap.com/docs/4.0/components/buttons/-->
+    <h1><a class="btn btn-primary" href="trialsearchbook_authorapi.html" role="button">Search For Books</a></h1>
+  </div>
+   <div>
+
+
+        <!--I have taken this code for button with link from link:-
+            https://getbootstrap.com/docs/4.0/components/buttons/-->
+    <h1><a class="btn btn-primary" href="trialsearchauthor_bookapi.html" role="button">Search For Authors</a></h1>
+  </div>
+	
+</body>
+</html>
+	
+		
+		
+
+	
+    
+        
+       
+
+    
+  
